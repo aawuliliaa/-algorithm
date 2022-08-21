@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+//选择排序----算法复杂度=O(n^2)
 //先把最小的拿出来
 //剩下的再把最小的拿出来
 //每次选择还没处理的元素中的最小元素
@@ -10,9 +11,7 @@ func selectionSort(sourceList []int) []int {
 
 		for j := i + 1; j < len(sourceList); j++ {
 			if sourceList[j] < sourceList[i] {
-				temp := sourceList[i]
-				sourceList[i] = sourceList[j]
-				sourceList[j] = temp
+				sourceList[j], sourceList[i] = sourceList[i], sourceList[j]
 			}
 		}
 	}
@@ -20,12 +19,10 @@ func selectionSort(sourceList []int) []int {
 }
 
 func anotherWaySort(sourceList []int) []int {
-	for i := len(sourceList)-1; i >= 0; i-- {
+	for i := len(sourceList) - 1; i >= 0; i-- {
 		for j := i - 1; j >= 0; j-- {
-			if sourceList[j]>sourceList[i]{
-				temp :=sourceList[i]
-				sourceList[i] = sourceList[j]
-				sourceList[j] = temp
+			if sourceList[j] > sourceList[i] {
+				sourceList[j], sourceList[i] = sourceList[i], sourceList[j]
 			}
 		}
 	}
