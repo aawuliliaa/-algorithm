@@ -20,7 +20,7 @@ func selectionSort(sourceList []int) []int {
 }
 
 func anotherWaySort(sourceList []int) []int {
-	for i := len(sourceList); i >= 0; i-- {
+	for i := len(sourceList)-1; i >= 0; i-- {
 		for j := i - 1; j >= 0; j-- {
 			if sourceList[j]>sourceList[i]{
 				temp :=sourceList[i]
@@ -38,7 +38,7 @@ func main() {
 	fmt.Println(desList)
 	//方式二：从后到前的排序
 
-	desListTwo := selectionSort(sourceList)
+	desListTwo := anotherWaySort(sourceList)
 	fmt.Println(desListTwo)
 
 }
