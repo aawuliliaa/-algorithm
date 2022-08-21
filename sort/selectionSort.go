@@ -32,12 +32,12 @@ func anotherWaySort(sourceList []int) []int {
 	return sourceList
 }
 func main() {
-	//方式一：从前到后的排序
+	//方式一：从前到后的排序,前面是排序好的，每次从后面未排序部分中找出最小的值放到前面
 	sourceList := []int{3, 6, 2, 1, 10, 33, 22, 34, 45, 15}
 	desList := selectionSort(sourceList)
 	fmt.Println(desList)
-	//方式二：从后到前的排序
 
+	//方式二：从后到前的排序，后面是排序好的，每次从前面未排序部分中找出最小的值放到后面
 	desListTwo := anotherWaySort(sourceList)
 	fmt.Println(desListTwo)
 
