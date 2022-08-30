@@ -1,7 +1,7 @@
 package main
 
 import "fmt"
-
+//link list
 type Node struct {
 	e    interface{}
 	next *Node
@@ -122,7 +122,7 @@ func (l *LinkList) RemoveFirst() {
 func (l *LinkList) RemoveLast() {
 	l.remove(l.size)
 }
-
+//stack
 
 type LinkListStack struct {
 	linkList *LinkList
