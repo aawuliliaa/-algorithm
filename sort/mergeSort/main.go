@@ -9,6 +9,7 @@ func sort(arr []int) []int {
 	mid := len(arr) / 2
 	arrL := sort(arr[:mid])
 	arrR := sort(arr[mid:])
+
 	return merge(arrL, arrR)
 
 }
