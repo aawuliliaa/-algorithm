@@ -11,9 +11,9 @@ func sort(arr []int, begin, end int) {
 	mid := (begin + end) / 2
 	sort(arr, begin, mid)
 	sort(arr, mid+1, end)
-	//if arr[mid] > arr[mid+1] {
-	//	merge(arr, begin, mid, end)
-	//}
+	if arr[mid] > arr[mid+1] {
+		merge(arr, begin, mid, end)
+	}
 
 }
 func merge(arr []int, begin, mid, end int) {

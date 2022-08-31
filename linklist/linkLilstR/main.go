@@ -58,17 +58,17 @@ func (l *LinkListR) getR(node *Node, index int) interface{} {
 	e := l.getR(node, index-1)
 	return e
 }
-func (l *LinkListR) GetFirst() interface{} {
-	return l.Get(0)
-}
-func (l *LinkListR) GetLast() interface{} {
-	return l.Get(l.size - 1)
-}
-func (l *LinkListR) Remove(index int)interface{}{
-
-}
-func (l *LinkListR) removeR(node *Node,index int)interface{}{
-	if index==0{
-
-	}
-}
+//func (l *LinkListR) GetFirst() interface{} {
+//	return l.Get(0)
+//}
+//func (l *LinkListR) GetLast() interface{} {
+//	return l.Get(l.size - 1)
+//}
+//func (l *LinkListR) Remove(index int)interface{}{
+//
+//}
+//func (l *LinkListR) removeR(node *Node,index int)interface{}{
+//	if index==0{
+//
+//	}
+//}
