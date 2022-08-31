@@ -21,7 +21,7 @@ func binarySearch(arr []int,target int) int {
 }
 
 func main() {
-	arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	arr := []int{1, 2, 3, 4, 5, 6, 7, 8, 9,10}
 	res :=binarySearch(arr,11)
 	fmt.Println(res)
 
