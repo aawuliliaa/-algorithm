@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 type Node struct {
 	e     int
@@ -19,23 +17,21 @@ func NewBinaryTree() *binaryTree {
 }
 
 func (tree *binaryTree) addNode(e int) {
-	tree.root = tree.add(tree.root, e)
+	tree.add(tree.root, e)
 
 }
-func (tree *binaryTree) add(node *Node, e int) *Node {
+func (tree *binaryTree) add(node *Node, e int) {
 	if node == nil {
-		tree.size++
-		return &Node{
-			e:     e,
+		node = &Node{
+			e:     0,
 			left:  nil,
 			right: nil,
 		}
 	} else if node.e > e {
-		node.left = tree.add(node.left, e)
+		tree.add(node.left, e)
 	} else {
-		node.right = tree.add(node.right, e)
+		tree.add(node.right, e)
 	}
-	return node
 
 }
 func main() {
