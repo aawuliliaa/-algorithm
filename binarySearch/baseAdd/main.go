@@ -18,6 +18,7 @@ func NewBinaryTree() *binaryTree {
 
 func (tree *binaryTree) addNode(e int) {
 	if tree.root == nil {
+		tree.size++
 		tree.root = &Node{
 			e:     e,
 			left:  nil,
@@ -56,8 +57,8 @@ func (tree *binaryTree) add(node *Node, e int) {
 
 }
 func main() {
-	tree :=NewBinaryTree()
-	for _,i := range []int{3, 5, 1, 2, 4} {
+	tree := NewBinaryTree()
+	for _, i := range []int{3, 5, 1, 2, 4} {
 		tree.addNode(i)
 	}
 	fmt.Println(tree)
