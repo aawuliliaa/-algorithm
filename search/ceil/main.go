@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 //查找大于target的最小索引
-func search(arr []int,target int)int  {
+func upper(arr []int,target int)int  {
 	l :=0
 	r := len(arr)-1
 	if arr[r]<=target{
@@ -24,9 +24,17 @@ func search(arr []int,target int)int  {
 		}
 	}
 }
+func ceil(arr []int,target int)int  {
+	p :=upper(arr,target)
+	if p==-1||p==0||arr[p-1]!=target{
+		return p
+	}
+	return p-1
+}
 
 func main()  {
 	arr := []int{1,1,3,3,5,7}
-	fmt.Println(search(arr,2))
+	fmt.Println(ceil(arr,0))
 
 }
+
