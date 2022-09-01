@@ -14,7 +14,7 @@ func lower(arr []int, target int) int {
 		return r
 	}
 	for {
-		mid := l + (r-l+1)/2
+		mid := l + (r-l)/2
 		if l >= r {
 			return l
 		}
