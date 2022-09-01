@@ -29,6 +29,6 @@ func lowerCeil(arr []int,target int) int {
 }
 func main()  {
 	arr := []int{1,2,2,5,5}
-	fmt.Println(lowerCeil(arr,5))
+	fmt.Println(lowerCeil(arr,2))
 
 }
