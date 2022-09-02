@@ -30,8 +30,7 @@ func (lq *LoopQueue) Dequeue() interface{} {
 	e := lq.data[lq.front]
 	lq.data[lq.front] = nil
 	lq.front = (lq.front + 1) % len(lq.data)
-	fmt.Println("size",lq.GetSize())
-	fmt.Println("capacity",lq.getCapacity())
+
 	if lq.GetSize() == lq.getCapacity()/4 {
 		lq.Resize(lq.getCapacity() / 2)
 	}

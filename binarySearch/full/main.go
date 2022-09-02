@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type queue struct {
 	data []interface{}
 	size int
@@ -74,12 +76,65 @@ func (t *tree) containsR(node *Node, e int) bool {
 		return t.containsR(node.right, e)
 	}
 }
+func (t *tree) preOrder() {
+	t.preOrderR(t.root)
 
+}
+func (t *tree) preOrderR(node *Node) {
+	if node == nil {
+		return
+	}
+	fmt.Println(node.e)
+	t.preOrderR(node.left)
+	t.preOrderR(node.right)
+}
+func (t *tree) inOrder() {
+	t.inOrderR(t.root)
+}
+func (t *tree) inOrderR(node *Node) {
+	if node == nil {
+		return
+	}
+
+	t.preOrderR(node.left)
+	fmt.Println(node.e)
+	t.preOrderR(node.right)
+}
+func (t *tree) postOrder() {
+	t.postOrderR(t.root)
+}
+func (t *tree) postOrderR(node *Node) {
+	if node == nil {
+		return
+	}
+
+	t.preOrderR(node.left)
+	t.preOrderR(node.right)
+	fmt.Println(node.e)
+}
+func (t *tree) levelOrder() {
+	q := newQueue(3)
+	q.Push(t.root)
+	for {
+		if q.IsEmpty() {
+			return
+		}
+		cur := q.Pop().(*Node)
+		fmt.Println(cur.e)
+		if cur.left != nil {
+			q.Push(cur.left)
+		}
+		if cur.right != nil {
+			q.Push(cur.right)
+		}
+
+	}
+}
 func main() {
 	tree := NewTree()
 	for _, i := range []int{3, 5, 1, 2, 4} {
 		tree.add(i)
 	}
-
+	tree.levelOrder()
 
 }
