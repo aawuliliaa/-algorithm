@@ -1,4 +1,5 @@
 package main
+
 import (
 	"algorithm/utils"
 	"bytes"
@@ -248,7 +249,7 @@ func (h *MaxHeap) siftUp(index int) {
 		index = parentIndex
 	}
 }
-func (h *MaxHeap) extractMax()int {
+func (h *MaxHeap) extractMax() int {
 	//把最后一个元素放到堆顶
 	max := h.data.data[0].(int)
 	h.data.data[0] = h.data.RemoveLast()
@@ -275,13 +276,13 @@ func (h *MaxHeap) siftDown(index int) {
 	}
 
 }
-func main()  {
+func main() {
 	arr := []int{3, 5, 4, 6, 8, 7}
 	heap := NewHeap()
-	for _, i := range arr{
+	for _, i := range arr {
 		heap.add(i)
 	}
-	for i:=0;i< len(arr);i++{
+	for i := len(arr) - 1; i >= 0; i-- {
 		arr[i] = heap.extractMax()
 	}
 	fmt.Println(arr)
