@@ -237,17 +237,40 @@ func (h *MaxHeap) add(e int) {
 	if h.data.GetSize() == 1 {
 		return
 	}
-	h.siftUp(h.data.GetSize()-1)
-
+	h.siftUp(h.data.GetSize() - 1)
 }
 func (h *MaxHeap) siftUp(index int) {
-	for index>0 {
+	for index > 0 {
 		parentIndex := h.parent(index)
 		if h.data.data[index].(int) < h.data.data[parentIndex].(int) {
 			return
 		}
 		h.data.data[index], h.data.data[parentIndex] = h.data.data[parentIndex], h.data.data[index]
 		index = parentIndex
+	}
+}
+func (h *MaxHeap) extractMax() {
+	//把最后一个元素放到堆顶
+	h.data.data[0] = h.data.RemoveLast()
+	h.siftDown(0)
+
+}
+func (h *MaxHeap) siftDown(index int) {
+	for h.leftChild(index) < h.data.GetSize() {
+		j := h.leftChild(index)
+		rightChildIndex := h.rightChild(index)
+		//找出左右子树中最大的节点
+		if rightChildIndex < h.data.GetSize() && h.data.data[j].(int) < h.data.data[rightChildIndex].(int) {
+			j = rightChildIndex
+		}
+		//index和它的左右子节点中大的子节点进行值交换
+		if h.data.data[j].(int) > h.data.data[index].(int) {
+			h.data.data[index], h.data.data[j] = h.data.data[j], h.data.data[index]
+		} else {
+			//左右子节点都小于该节点，就停止
+			break
+		}
+
 	}
 
 }
@@ -256,6 +279,7 @@ func main() {
 	for _, i := range []int{3, 5, 4, 6, 8, 7} {
 		heap.add(i)
 	}
+	heap.extractMax()
 	fmt.Println(heap)
 
 }
