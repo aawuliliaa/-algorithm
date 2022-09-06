@@ -20,4 +20,5 @@ func main() {
 	words := []string{"gin", "zen", "gig", "msg"}
 	fmt.Println(uniqueMorseRepresentations(words))
 
+
 }
