@@ -55,7 +55,7 @@ func (st *SegmentTree) buildSegmentTreeR(treeIndex, l, r int) {
 
 // 在以treeIndex为根的线段树中[l...r]的范围里，搜索区间[queryL...queryR]的值
 func (st *SegmentTree) query(queryL, queryR int) int {
-	if queryL < 0 || queryL >= len(st.data) || queryR < 0 || queryR > len(t.data) {
+	if queryL < 0 || queryL >= len(st.data) || queryR < 0 || queryR > len(st.data) {
 		panic("index is out of range")
 	}
 	return st.queryR(0, 0, len(st.data)-1, queryL, queryR)
