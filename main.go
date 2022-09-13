@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"sync"
 )
 
 func uniqueMorseRepresentations(words []string) int {
@@ -19,6 +20,6 @@ func uniqueMorseRepresentations(words []string) int {
 func main() {
 	words := []string{"gin", "zen", "gig", "msg"}
 	fmt.Println(uniqueMorseRepresentations(words))
-
+	sync.WaitGroup{}
 
 }
