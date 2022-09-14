@@ -1,9 +1,6 @@
 package main
 
-import (
-	"fmt"
-	"sync"
-)
+import "fmt"
 
 func uniqueMorseRepresentations(words []string) int {
 	code := []string{".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."}
@@ -18,8 +15,8 @@ func uniqueMorseRepresentations(words []string) int {
 	return len(wordCodeMap)
 }
 func main() {
-	words := []string{"gin", "zen", "gig", "msg"}
-	fmt.Println(uniqueMorseRepresentations(words))
-	sync.WaitGroup{}
+	a := 2
+	aS :=string(a)
+	fmt.Println(aS)
 
 }
